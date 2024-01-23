@@ -1,0 +1,13 @@
+<div class="">
+  <nav class="navbar text-white navbar-dark bg-dark">
+    <span>{{ user?.email }}</span>
+    >
+    <button class="btn btn-danger" (click)="onLogOut()">LogOut</button>
+  </nav>
+</div>
+
+<p>Hero layout</p>
+<!--To do el html aqui se comparte con hijas-->
+<!--Carga esta pagina y luego las router hijas cargan dentro-->
+<router-outlet></router-outlet>
+<Footer></Footer>

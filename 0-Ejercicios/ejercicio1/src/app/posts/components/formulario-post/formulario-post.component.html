@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+  <h4 class="d-flex justify-content-center align-items-center">
+    Registrar Post
+  </h4>
+
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form-control">
+    <!--id-->
+
+    <!--idUser-->
+    <!--<label for="title">IUserId</label>
+    <div class="form-group">
+      <input
+        type="number"
+        formControlName="userid"
+        class="form-control"
+        value="1"
+      />
+    </div>-->
+    <!---->
+
+    <!-----TITLE------>
+    <div class="form-group my-2">
+      <label for="title">Titulo</label>
+      <input
+        formControlName="title"
+        type="text"
+        class="form-control"
+        id="title"
+        placeholder="Titulo"
+        #formPost
+      /><!---ERROR TITLE-->
+      <small *ngIf="checkError('title')" class="form-text text-danger">{{
+        this.obtenerError("title")
+      }}</small>
+    </div>
+
+    <!---SELECT -->
+    <div class="form-group my-2">
+      <label for="select">¿Completado?</label>
+      <select
+        formControlName="completed"
+        #formPost
+        class="form-control form-control-sm"
+      >
+        <option>-</option>
+        <option value="false">false</option>
+        <option value="true">true</option>
+      </select>
+      <!---ERROR SELECT COMPLETE-->
+      <small *ngIf="checkError('title')" class="form-text text-muted">{{
+        this.obtenerError("title")
+      }}</small>
+    </div>
+
+    <!--Boton submit-->
+    <button type="submit" class="btn btn-primary">Registrar</button>
+  </form>
+</div>

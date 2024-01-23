@@ -1,0 +1,27 @@
+<!--Button add-->
+<div class="flex-row col-1">
+  <button [routerLink]="['addPost']" class="btn btn-outline-info btn-sm mx-2">
+    Add
+  </button>
+</div>
+<!--Tabla de posts-->
+<div>
+  <!--Mostrar lista-->
+  <!-- <post-list
+    [postList]="postList"
+
+  ></post-list> -->
+  <post-list
+    [postList]="postList"
+    *ngIf="postList.length > 0; else avisoCaido"
+  ></post-list>
+</div>
+
+<!--Alerta de no posts-->
+<!--Solo si el array esta vacio muestra esta alerta *ngIf="postList.length > 0; else botonMostrar"-->
+<ng-template #avisoCaido>
+  <div class="alert alert-danger" role="alert">
+    <i class="bi bi-x-octagon-fill">X</i>
+    No hay Posts que mostrar...
+  </div>
+</ng-template>

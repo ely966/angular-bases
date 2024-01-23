@@ -1,0 +1,36 @@
+<p>card works!</p>
+<div class="card" style="width: 18rem">
+  <!-- <img
+    class="card-img-top"
+    [src]="'assets/heroes/' + hero.id + '.jpg'"
+    [alt]="hero.superhero"
+  /> --><!--LLAMAR AL PIPE heroImage-->
+  <img class="card-img-top" [src]="hero | heroImage" [alt]="hero.superhero" />
+  <div class="card-body">
+    <h5 class="card-title">{{ hero.superhero }}</h5>
+    <h6 class="card-title">{{ hero.alter_ego }}</h6>
+    <p class="card-text">
+      {{ hero.publisher }}
+    </p>
+    <p class="card-text">
+      <strong>Primera aparicion: </strong>{{ hero.first_appearance }}
+    </p>
+    <br />
+    <ul>
+      <li *ngFor="let name of hero.characters.split(',') | slice : 0 : 3">
+        <!--Como maximo 3-->
+        {{ name }}
+      </li>
+    </ul>
+    <button
+      class="btn btn-primary mt-3"
+      [routerLink]="['/heroes/edit', hero.id]"
+    >
+      Edit
+    </button>
+    <button class="btn btn-primary mt-3" [routerLink]="['/heroes/', hero.id]">
+      Mas
+    </button>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>

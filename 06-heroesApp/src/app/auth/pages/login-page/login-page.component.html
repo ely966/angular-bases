@@ -1,0 +1,30 @@
+<div class="flex flex-column">
+  <span class="text-lg mb-4">Login</span>
+  <form>
+    <label class="text-dark text-md-center mt-2">Usuario : </label>
+    <input
+      type="text"
+      placeholder="Nombre del usuario"
+      class="input-group-sm mt-3"
+    />
+    <br />
+
+    <label class="text-dark text-md-center mt-2">Contraseña: </label>
+    <input
+      type="password"
+      plaveholder="Contraseña"
+      class="input-group-sm mt-3"
+    /><br />
+    <!--Tiene sumit incluido y recarga la pagina-->
+    <button class="btn btn-outline-primary mt-2" (click)="onLogin()">
+      Ingresar
+    </button>
+  </form>
+  <button class="btn btn-outline-primary mt-2" (click)="onLogin()">
+    Ingresar
+  </button>
+
+  <div class="row">
+    <a routerLink="/auth/new-account">¿Ya tiene suna cuenta?</a>
+  </div>
+</div>

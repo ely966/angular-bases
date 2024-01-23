@@ -1,0 +1,13 @@
+<p>list-page works!</p>
+
+<div class="row-cols-auto">
+  <div *ngFor="let hero of heroes" class="col">
+    <heroes-hero-card [hero]="hero"></heroes-hero-card>
+  </div>
+</div>
+
+<!-- <ul class="">
+      <li *ngFor="let hero of heroes">
+        {{ hero.superhero }}
+      </li>
+    </ul>-->

@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+  <h4 class="text-center">Login</h4>
+  <form [formGroup]="myForm" class="form-control" (ngSubmit)="onSubmit()">
+    <div class="form-group my-2">
+      <label for="exampleInputEmail1">Escribe tu correo</label>
+      <input
+        type="email"
+        formControlName="email"
+        class="form-control"
+        aria-describedby="emailHelp"
+        placeholder="Ejemplo: ejemplo@gmail.com"
+      />
+      <small
+        *ngIf="checkValidations('email')"
+        class="form-text text-danger text-lg-start"
+        >{{ this.obtenerError("email") }}</small
+      >
+    </div>
+    <div class="form-group my-2">
+      <label for="exampleInputPassword1">Introduce tu contraseña :</label>
+      <input
+        type="password"
+        formControlName="password"
+        class="form-control"
+        placeholder="Contraseña"
+      />
+      <small *ngIf="checkValidations('password')">
+        {{ this.obtenerError("password") }}
+      </small>
+    </div>
+    <button type="submit" class="btn btn-primary my-2">Entrar</button>
+  </form>
+  <!--Fuera del form-->
+  <div class="d-flex justify-content-center align-items-center">
+    <button class="btn btn-primary col-1">-</button>
+    <button
+      class="btn btn-danger col-1 btn-sm mx-2 my-2"
+      [routerLink]="['/home']"
+    >
+      Regresar Home
+    </button>
+  </div>
+</div>

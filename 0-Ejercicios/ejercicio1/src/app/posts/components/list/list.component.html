@@ -1,0 +1,40 @@
+<h4 class="text-center">Lista</h4>
+<!-- <ul>
+  <li *ngFor="let post of postList">
+    {{ post.title }}
+  </li>
+</ul> -->
+<div class="row mx-auto table-scroll">
+  <!--Mx-auto regula margen-->
+  <table #tablee class="table table-striped table-hover table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th>UserId</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Completed</th>
+        <th>Enlace</th>
+      </tr>
+    </thead>
+
+    <tbody class="table-responsive">
+      <tr *ngFor="let post of postList">
+        <td>{{ post.userId }}</td>
+        <td>{{ post.id }}</td>
+        <td>{{ post.title }}</td>
+        <td>{{ post.completed }}</td>
+        <!-- <td><a [routerLink]="post/post.id">Ver más</a></td> -->
+        <td>
+          <a [routerLink]="['./', post.id]">Ver mas</a>
+        </td>
+      </tr>
+      <!-- <tr *ngFor="let post of postList">
+        <td>{{ post.userId }}</td>
+        <td>{{ post.id }}</td>
+        <td>{{ post.title }}</td>
+        <td>{{ post.completed }}</td>
+      </tr> -->
+    </tbody>
+    >
+  </table>
+</div>

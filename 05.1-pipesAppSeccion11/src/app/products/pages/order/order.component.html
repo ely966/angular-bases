@@ -1,0 +1,72 @@
+<p-panel header="Pipes personalizados" class="p-1">
+  <!--Mandar valores a los pipe. si quieres entero 1y 2 decimales toggleCase:'1.2-2'-->
+  <!--Este caso seria true para mayusculas-->
+  <!-- <p>Pipes Personalizados . creado por {{ "nosotros" | toggleCase }}</p> {{ "nosotros" | toggleCase : true : 123 : "si" }}-->
+  <p>
+    Pipes Personalizados . creado por
+    {{ "nosotros" | toggleCase : isUpperCase }}
+  </p>
+</p-panel>
+
+<p-toolbar>
+  <!-- <div class="p-toolbar-group-start">
+    <button pButton icon="pi pi-plus" class="mr-2"></button>
+    <button pButton icon="pi pi-print" class="mr-2"></button>
+    <button pButton icon="pi pi-upload"></button>
+  </div>
+  <div class="p-toolbar-group-center">
+    <span class="p-input-icon-left">
+      <i class="pi pi-search"></i>
+      <input pInputText placeholder="Search" />
+    </span>
+  </div> -->
+
+  <div class="p-toolbar-group-start">
+    <p-button
+      label="Toogle Case"
+      icon="pi pi-search"
+      class="mr-2"
+      (click)="toggleUpperCase()"
+    ></p-button>
+  </div>
+  <div class="p-toolbar-group-end">
+    <!-- <p-splitButton label="Save" icon="pi pi-check" [model]="items"></p-splitButton> -->
+
+    <p-button
+      label="Por nombre"
+      icon="pi pi-sort"
+      class="mr-2"
+      styleClass="p-button-success"
+    ></p-button>
+
+    <p-button
+      label="por volar"
+      class="mr-2"
+      icon="pi pi-sort"
+      styleClass="p-button-danger"
+    ></p-button>
+    <p-button
+      label="por color"
+      class="mr-2"
+      icon="pi pi-sort"
+      styleClass="p-button-help"
+    ></p-button>
+  </div>
+</p-toolbar>
+
+<div class="grid">
+  <!--[value]="heroe|sortBy " -->
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>canFly</th>
+      <th>color</th>
+    </tr>
+
+    <tr *ngFor="let hero of heroes">
+      <td>{{ hero.name }}</td>
+      <td>{{ hero.canFly }}</td>
+      <td>{{ hero.color }}</td>
+    </tr>
+  </table>
+</div>

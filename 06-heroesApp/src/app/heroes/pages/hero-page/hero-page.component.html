@@ -1,0 +1,46 @@
+<p>hero-page works!</p>
+<!--Espera-->
+<ng-template #divLoading>
+  <div class="d-flex align-items-center">
+    <strong>Loading...</strong>
+    <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+  </div>
+</ng-template>
+
+<!--CARD-->
+<div class="card mb-3" style="max-width: 540px">
+  <div class="row g-0" *ngIf="hero; else divLoading">
+    <div class="col-md-4">
+      <!--Imagen es apsar el heroe por nuestro pipe de hero iamgen-->
+      <img
+        [src]="hero | heroImage"
+        class="img-fluid rounded-start"
+        [alt]="hero.alter_ego"
+      />
+    </div>
+    <!--Solo se mostrara si tenemos un hero de lo contrario sera el template-->
+    <div class="col-md-8">
+      <!--{{ hero | json }}VER OBJETO EN EL PANTALLA-->
+      <div class="card-body">
+        <h5 class="card-title">{{ hero.alter_ego }}</h5>
+        <h6 class="card-subtitle">{{ hero.superhero }}</h6>
+        <br />
+        <h6 class="card-text">
+          <ul>
+            <li>{{ hero.first_appearance }}</li>
+            <li>{{ hero.alter_ego }}</li>
+          </ul>
+        </h6>
+        <p class="card-text">
+          <small class="text-body-secondary">{{ hero.publisher }}</small>
+        </p>
+        <p class="card-text">
+          <small class="text-body-secondary">
+            <li>{{ hero.characters }}</li></small
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<button (click)="goBack()">Regresar</button>

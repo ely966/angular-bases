@@ -1,0 +1,99 @@
+<p>new-page works!</p>
+
+<h1>Editar/agregar Heroe</h1>
+<small> Superman</small>
+<hr />
+
+<div class="row">
+  <div class="col">
+    <form [formGroup]="heroForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="superheroe">Super Heroe</label>
+        <input
+          type="text"
+          class="form-control input-sm"
+          id="superHeroe"
+          placeholder="Enter super heroe"
+          required
+          formControlName="superhero"
+        />
+      </div>
+      <div class="form-group">
+        <label for="alterEgo">Alter Ego</label>
+        <input
+          type="text"
+          class="form-control input-sm"
+          id="alterEgo"
+          placeholder="Enter alterEgo"
+          formControlName="alter_ego"
+        />
+      </div>
+      <div class="form-group">
+        <label for="primeraAparicion">Primera aparicion</label>
+        <input
+          type="text"
+          class="form-control input-sm"
+          id="primeraAparicion"
+          placeholder="Enter primeraAparicion"
+          formControlName="first_appearance"
+        />
+      </div>
+      <div class="form-group">
+        <label for="personajes">Personajes</label>
+        <input
+          type="text"
+          class="form-control input-sm"
+          id="personajes"
+          placeholder="Enter personajes"
+          formControlName="characters"
+        />
+      </div>
+
+      <hr />
+
+      <div class="form-group">
+        Creador
+        <select
+          class="form-select form-select-sm"
+          aria-label=".form-select-sm example"
+          formControlName="publisher"
+        >
+          <option selected>Open this select menu</option>
+          <option *ngFor="let publisher of publishers" [value]="publisher.id">
+            {{ publisher.desc }}
+          </option>
+        </select>
+      </div>
+      <!--si no foto, mandar al pipe y asi buscara la iamgen por defecto-->
+      <div class="form-group">
+        <label for="alt_iamg">Alternative Image</label>
+        <input
+          type="text"
+          class="form-control input-sm"
+          id="personajes"
+          placeholder="Enter personajes"
+          formControlName="alt_img"
+        />
+      </div>
+    </form>
+
+    <img [src]="currentHero | heroImage" alt="" />
+    <p></p>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="" id="save" class="btn btn-success" (click)="onSubmit()">
+      Guardar
+    </button>
+    <button type="" id="delete" class="btn btn-danger" (click)="onDeleteHero()">
+      Borrar
+    </button>
+
+    <div>
+      <img src="" />
+    </div>
+  </div>
+</div>
+
+<!---Comprobar lo añadido al form-->
+<pre>
+    {{ currentHero | json }}
+</pre>
