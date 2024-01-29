@@ -1,3 +1,10 @@
 form {
   width: 40em;
 }
+/* agregar borde rojo a los input que estén en estado inválido */
+/* .ng-invalid :not(form, label, small, div, button) {
+  border: 1px solid red;
+}
+.ng-valid :not(form, label, small, div, button) {
+  border: 1px solid green;
+} */

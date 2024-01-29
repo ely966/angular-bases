@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from '../../interfaces/post.interface';
 import { PostService } from '../../services/post.service';
@@ -9,6 +9,9 @@ import { PostService } from '../../services/post.service';
   styleUrl: './add-post.component.css',
 })
 export class AddPostComponent {
+  //titulo del formulario
+  @Input() accion = 'Registrar ';
+
   // postNew: Post = {
   //   id: 0,
   //   userId: 0,

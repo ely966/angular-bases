@@ -1,15 +1,17 @@
 <div>
   <app-formulario-post
-    (sendPostNew)="recibidoPost($event)"
+    (sendPostNew)="recibirPostEditado($event)"
     [accion]="this.accion"
-  ></app-formulario-post>
+    [idd]="this.id"
+  >
+  </app-formulario-post>
 </div>
 
 <div>
   <div class="d-flex justify-content-center align-items-center my-2">
     <p></p>
     <!--Volver a la lista de post-->
-    <button class="btn btn-group-sm btn-info" [routerLink]="['..']">
+    <button class="btn btn-group-sm btn-info" [routerLink]="['../..']">
       Volver a la lista
     </button>
   </div>

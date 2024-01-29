@@ -1,21 +1,24 @@
 <div class="row justify-content-center">
   <h4 class="d-flex justify-content-center align-items-center">
-    Registrar Post
+    {{ accion }} Post
   </h4>
 
-  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form-control">
+  <form
+    [formGroup]="myForm"
+    (ngSubmit)="onSubmit()"
+    class="border border-black"
+  >
     <!--id-->
 
     <!--idUser-->
-    <!--<label for="title">IUserId</label>
-    <div class="form-group">
-      <input
-        type="number"
-        formControlName="userid"
-        class="form-control"
-        value="1"
-      />
-    </div>-->
+    <div class="form-group my-2">
+      <label for="title">UserId</label>
+      <input type="number" formControlName="userId" class="form-control" />
+      <!---ERROR UserId-->
+      <small *ngIf="checkError('userId')" class="form-text text-danger">{{
+        obtenerError("userId")
+      }}</small>
+    </div>
     <!---->
 
     <!-----TITLE------>
@@ -30,7 +33,7 @@
         #formPost
       /><!---ERROR TITLE-->
       <small *ngIf="checkError('title')" class="form-text text-danger">{{
-        this.obtenerError("title")
+        obtenerError("title")
       }}</small>
     </div>
 
@@ -39,20 +42,21 @@
       <label for="select">¿Completado?</label>
       <select
         formControlName="completed"
+        class="form-control"
         #formPost
         class="form-control form-control-sm"
       >
-        <option>-</option>
+        <option value="">-</option>
         <option value="false">false</option>
         <option value="true">true</option>
       </select>
       <!---ERROR SELECT COMPLETE-->
-      <small *ngIf="checkError('title')" class="form-text text-muted">{{
-        this.obtenerError("title")
+      <small *ngIf="checkError('completed')" class="form-text text-danger">{{
+        this.obtenerError("completed")
       }}</small>
     </div>
 
     <!--Boton submit-->
-    <button type="submit" class="btn btn-primary">Registrar</button>
+    <button type="submit" class="btn btn-primary">{{ accion }}</button>
   </form>
 </div>

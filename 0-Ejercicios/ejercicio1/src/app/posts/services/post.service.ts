@@ -11,7 +11,7 @@ export class PostService {
   public posts: Post[] = [];
   private url: string = 'https://jsonplaceholder.typicode.com/todos'; //para todas las busquedad. Url
   private urlId: string = ''; //Para buscar por id, se le añadira luego la variable url + id
-
+  private urll: string = 'https://jsonplaceholder.typicode.com/posts';
   constructor(private httpClient: HttpClient) {
     console.log('iniciando servicio');
   }
@@ -40,7 +40,7 @@ export class PostService {
     this.urlId = this.url + '/' + idPost;
     return this.httpClient.get<Post>(this.urlId).pipe(
       tap((post) => {
-        console.log(post);
+        /// console.log(post);
       })
     );
   }
@@ -50,5 +50,27 @@ export class PostService {
   addPost(post: Post) {
     // return this.httpClient.put(this.url, post).pipe(tap());
     return this.httpClient.post<Post>(this.url, post).pipe(tap(this.getPost()));
+  }
+
+  //Editar
+  editPost(postEditado: Post, idPost: number) {
+    console.log(postEditado);
+    console.log('Editado');
+    return this.httpClient
+      .patch(`${this.url}/${idPost}`, postEditado)
+      .pipe(tap());
+  }
+
+  //Borrar post
+  deletePost(idPost: number): void {
+    const id = idPost.toString();
+    //console.log(`${this.urll}/${id}`);
+
+    this.httpClient.delete(`${this.url}/${id}`).subscribe({
+      next: (result) => {
+        console.log('Borrado');
+        //console.log(this.getPostsList());
+      },
+    });
   }
 }

@@ -52,7 +52,7 @@ export class LoginComponent {
         case 'email':
           return 'El formato del correo es incorrecto. Asegurate que tenga un formato email como por ejemplo ejemplo@gmail.com';
         case 'minlength':
-          return 'No esta el minimo de caracteres. Minimo 3 caracteres';
+          return 'No esta el minimo de caracteres. Minimo 4 caracteres';
       }
     }
 

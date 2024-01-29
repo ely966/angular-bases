@@ -1,6 +1,8 @@
 <div>
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand">Bienvenido/a</a>
-    <button class="btn btn-danger" (click)="logOut()">Log out</button>
+    <button class="btn btn-danger" (click)="logOut()" *ngIf="this.logeado">
+      Log out
+    </button>
   </nav>
 </div>

@@ -45,4 +45,10 @@ export class PostComponent implements OnInit {
   handleGetPostSuccess(post: Post[]) {
     this.postList = post;
   }
+
+  // //BORRAR POST
+
+  // deletePost(idPost: number): void {
+
+  // }
 }

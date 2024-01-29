@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../../auth/interfaces/user.interface';
 import { AuthService } from '../../../auth/services/auth.service';
 
 @Component({
@@ -8,6 +7,7 @@ import { AuthService } from '../../../auth/services/auth.service';
   styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent implements OnInit {
+  logeado: boolean = false;
   //userLogeado: User | null = null;
 
   constructor(private authService: AuthService) {}
@@ -16,12 +16,17 @@ export class SidebarComponent implements OnInit {
   }
 
   //Comprobar si el boton debe mostrarse
-  checkUser(): User | null {
+  checkUser() {
     //console.log(this.authService.getLocalStorage());
-    if (!this.authService.getLocalStorage()) return null;
-    return this.authService.getLocalStorage();
+    // if (!this.authService.getLocalStorage()) return null;
+    if (!this.authService.getLocalStorage()) {
+      this.logeado = false;
+    } else {
+      this.logeado = true;
+    }
   }
   logOut() {
     this.authService.logOut();
+    //this.checkUser();
   }
 }
