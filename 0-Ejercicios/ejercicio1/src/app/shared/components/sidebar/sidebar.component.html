@@ -1,8 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand">App</a>
+
+  <div class="navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" [routerLink]="['../home']">Home</a>
+      <a class="nav-item nav-link" [routerLink]="['../auth/login']">login</a>
+      <a class="nav-item nav-link" [routerLink]="['../posts']">Post</a>
+      <a class="nav-item nav-link disabled" href="#">Disabled</a>
+    </div>
+    <button class="btn btn-danger" (click)="logOut()">
+      <!--ngIf="!this.logeado"-->
+      Log out
+    </button>
+  </div>
+</nav>
+
+<!-- 
 <div>
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand">Bienvenido/a</a>
+    <a class="navbar-item">Bienvenido/a</a>
+
     <button class="btn btn-danger" (click)="logOut()" *ngIf="this.logeado">
       Log out
     </button>
   </nav>
-</div>
+</div> -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">Bienvenido</a>
+
+  <div class="navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#"
+        >Home <span class="sr-only">(current)</span></a
+      >
+      <a class="nav-item nav-link" href="#">Features</a>
+      <a class="nav-item nav-link" href="#">Pricing</a>
+      <a class="nav-item nav-link disabled" href="#">Disabled</a>
+    </div>
+  </div>
+</nav> -->

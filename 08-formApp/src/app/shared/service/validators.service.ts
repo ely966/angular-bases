@@ -43,4 +43,21 @@ export class ValidatorsService {
       return null;
     };
   }
+
+  // public isFieldOneEqualFieldTwo(field1: string, field2: string) {
+  //   return (formGroup: FormGroup): ValidationErrors | null => {
+  //     const fieldValue1 = formGroup.get(field1)?.value;
+  //     const fieldValue2 = formGroup.get(field2)?.value;
+  //     console.log('d');
+  //     //si son diferentes
+  //     if (fieldValue1 !== fieldValue2) {
+  //       formGroup.get(field2)?.setErrors({ notEqual: true }); //mandar error al segundo campo, input, por que no es igual a la primera contraseña
+  //       return { notEqual: true };
+  //     }
+
+  //     //si la contraseñas son iguales, como tiene que ser
+  //     formGroup.get(field2)?.setErrors(null); //limpieza de errores, pero quita lso demas errores excepto el required
+  //     return null;
+  //   };
+  // }
 }

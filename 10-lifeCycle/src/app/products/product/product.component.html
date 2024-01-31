@@ -1,0 +1,6 @@
+<p>product works!</p>
+<app-price *ngIf="isProductVisible" [price]="currentPrice"></app-price>
+
+<button (click)="isProductVisible = !isProductVisible">Toggle</button
+><!--Al clikear el otro componente aparece>-->
+<button (click)="increasePrice()">+1 PRICE</button>

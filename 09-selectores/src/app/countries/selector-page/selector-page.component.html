@@ -1,0 +1,61 @@
+<p>selector-page works!</p>
+<h1 class="mt-3">Selectores anidados</h1>
+<hr />
+
+<form [formGroup]="myForm">
+  <!--Region-->
+  <div class="row mb-3">
+    <div class="col">
+      <label for="" class="form-label">Continente :</label>
+      <select formControlName="region" name="" class="form-control">
+        <option value="">--Seleccione continente</option>
+        <option *ngFor="let region of regions" [value]="region">
+          <!--regions es get-->
+          {{ region }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <!--Countries-->
+  <!--Solo se muetsre si se selecciono una region, porque hay tendra countryByRegion con datos y asi hay paises-->
+  <div class="row mb-3" *ngIf="countriesByRegion.length > 0">
+    <div class="col">
+      <label for="" class="form-label">País :</label>
+      <select formControlName="country" name="" class="form-control">
+        <option value="">--Seleccione país ---</option>
+        <option
+          *ngFor="let country of countriesByRegion"
+          [value]="country.cca3"
+        >
+          {{ country.name }}
+        </option>
+        <!--regions es get-->
+      </select>
+    </div>
+  </div>
+
+  <!--Borders/Fronteras-->
+  <!--Al selecciona run paies, se mostrara los diferentes fronteras que tiene ese pais-->
+  <div class="row mb-3" *ngIf="borders.length > 0">
+    <div class="col">
+      <label for="" class="form-label">Fronteras :</label>
+      <select formControlName="border" name="" class="form-control">
+        <option value="">--Seleccione la frontera ---</option>
+        <!-- <option *ngFor="let border of borders" [value]="border"> -->
+        <option *ngFor="let country of borders" [value]="country.cca3">
+          {{ country.name }}
+        </option>
+        <!--regions es get-->
+      </select>
+    </div>
+  </div>
+</form>
+
+<h3>Formulario</h3>
+
+<code>
+  {{ myForm.value | json }}
+</code>
+
+<p>is from valid: {{ myForm.valid }}</p>
