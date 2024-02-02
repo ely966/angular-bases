@@ -26,12 +26,15 @@ export class FormularioPostComponent implements OnInit {
     completed: false,
   };
 
-  myForm: FormGroup = this.formBuilder.group({
-    id: [this.postNew.id],
-    userId: [0, [Validators.required]],
-    title: ['', [Validators.required, Validators.minLength(6)]],
-    completed: [false, Validators.required],
-  });
+  myForm: FormGroup = this.formBuilder.group(
+    {
+      id: [this.postNew.id],
+      userId: [0, [Validators.required]],
+      title: ['', [Validators.required, Validators.minLength(6)]],
+      completed: [false, Validators.required],
+    },
+    { validators: [] }
+  );
 
   constructor(
     private formBuilder: FormBuilder,

@@ -16,6 +16,13 @@ const routes: Routes = [
     //canMatch: [privateGuard],
   },
   {
+    path: 'form-anidados',
+    loadChildren: () =>
+      import('./formularios-anidados/formularios-anidados.module').then(
+        (m) => m.FormulariosAnidadosModule
+      ),
+  },
+  {
     path: 'home',
     component: HomeComponent,
   },

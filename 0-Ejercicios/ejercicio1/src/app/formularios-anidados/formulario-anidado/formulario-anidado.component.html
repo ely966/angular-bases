@@ -1,0 +1,109 @@
+<p>formulario-anidado works!</p>
+<div class="d-flex justify-content-center align-items-center">
+  <form [formGroup]="myForm" (ngSubmit)="submitForm()">
+    <!--NAME y Pasword-->
+    <div class="form-group my-2">
+      <label class="fw-bold">Name</label>
+
+      <input
+        type="text"
+        class="form-control"
+        id="namee"
+        formControlName="name"
+        placeholder="Your name"
+      />
+      <!--ERRORES Name-->
+      <small *ngIf="checkInputError('name')" class="form-text text-danger">{{
+        mostrarError("name")
+      }}</small>
+    </div>
+    <!--=====================================-->
+    <!--PASSWORD-->
+    <div class="form-group my-2">
+      <label class="fw-bold">Password</label>
+      <input
+        type="password"
+        formControlName="password"
+        class="form-control"
+        id="pass"
+        placeholder="Password"
+      />
+
+      <!--ERRORES Password-->
+      <small
+        *ngIf="checkInputError('password')"
+        class="form-text text-danger"
+        >{{ mostrarError("password") }}</small
+      >
+    </div>
+    <div class="form-group my-2">
+      <label class="fw-bold">Repeat Password</label>
+      <input
+        type="password"
+        formControlName="passwordRepeat"
+        class="form-control"
+        id="pass2"
+        placeholder="Repeat password"
+      />
+      <!--ERRORES repeat Password-->
+      <small
+        *ngIf="checkInputError('passwordRepeat')"
+        class="form-text text-danger"
+        >{{ mostrarError("passwordRepeat") }}</small
+      >
+    </div>
+
+    <!--=====================================-->
+    <!--=====================================-->
+    <!---EMAIL Y HOBBIES-->
+    <!--EMAIL-->
+    <div class="form-group my-2">
+      <label class="fw-bold">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        formControlName="email"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+      />
+      <!--ERRORES Email-->
+      <small *ngIf="checkInputError('email')" class="form-text text-danger">{{
+        mostrarError("email")
+      }}</small>
+    </div>
+    <!--=====================================-->
+    <!--HOBBIES-->
+    <div class="form-group my-2" *ngIf="hobbies.length > 0">
+      <label class="fw-bold">Selecciona Hobbie</label>
+      <select class="form-control form-control-sm" formControlName="hobbie">
+        <option value="">Selecciona un hobbie</option>
+        <option *ngFor="let hobbie of hobbies" value="{{ hobbie }}">
+          {{ hobbie }}
+        </option>
+      </select>
+      <!--ERRORES Hobbie-->
+      <small *ngIf="checkInputError('hobbie')" class="form-text text-danger">{{
+        mostrarError("hobbie")
+      }}</small>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<!--https://getbootstrap.com/docs/5.0/utilities/text/-->
+
+<hr />
+<!--vALORES-->
+VALORES:
+{{ myForm.value | json }}
+
+<!--Comprobar validez-->
+Validez:
+{{ myForm.valid | json }}
+<!--Va-->
+<p></p>
+Error:
+{{ myForm.controls["password"].errors | json }}
+{{ myForm.controls["passwordRepeat"].errors | json }}
+{{ myForm.controls["passwordRepeat"].hasError | json }}
