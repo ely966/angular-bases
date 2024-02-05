@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  FormControl,
+  Validators,
+} from '@angular/forms';
 import { RecogidaDatosService } from '../services/recogida-datos.service';
 import { compararPassword } from '../validaciones/fuctions/compararPassword';
 
@@ -19,6 +24,8 @@ export class FormularioAnidadoComponent implements OnInit {
 
   //Hobbies
   hobbies: string[] = [];
+  //Creamos variable que consistira en los nuevos hobbies
+  //public newHobbies: FormControl = new FormControl('', [Validators.required]);
 
   myForm = this.formBuilder.group(
     {
@@ -29,12 +36,19 @@ export class FormularioAnidadoComponent implements OnInit {
       password: ['', [Validators.required]],
       passwordRepeat: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      hobbie: ['', [Validators.required]],
+      //hobbie: ['', [Validators.required]],
+      hobbies: this.formBuilder.array([''], [Validators.required]),
     },
     {
       validators: compararPassword(),
     }
   );
+
+  //recoger array del form
+  //Siempre que se encuentre un array. pero ccon el rest de propiedades se recomienda tambien
+  get hobbieForm() {
+    return this.myForm.get('hobbies') as FormArray;
+  }
 
   constructor(
     private formBuilder: FormBuilder,
@@ -59,8 +73,8 @@ export class FormularioAnidadoComponent implements OnInit {
     //this.myForm.controls.name.errors
     //const campo = this.myForm.controls.name.errors || null;
     //this.myForm.get('').valid;
-    this.myForm.get(campoInput)?.errors;
-    console.log(this.myForm.get(campoInput)?.errors);
+    //this.myForm.get(campoInput)?.errors;
+    //console.log(this.myForm.get(campoInput)?.errors);
 
     //si es tocado y invalido
     return (
@@ -69,17 +83,23 @@ export class FormularioAnidadoComponent implements OnInit {
       this.myForm.get(campoInput)?.invalid
     );
 
-    //return false;
-
-    //    return (this.myForm.controls{[campoInput]}||
-    //     this.myForm.controls[campoInput].touched) &&
-    //   this.myForm.controls[campoInput].invalid
-    // );
-
     //   (this.myForm.controls[campoInput].dirty ||
     //     this.myForm.controls[campoInput].touched) &&
     //   this.myForm.controls[campoInput].invalid
     // );
+  }
+
+  //COMPROBAR ERRORES ARRAY
+  arrayCheckInputError(
+    inputArray: string[],
+    index: number
+  ): boolean | undefined {
+    //si es tocado y invalido
+    return (
+      (this.myForm.get(inputArray[index])?.touched ||
+        this.myForm.get(inputArray[index])?.dirty) &&
+      this.myForm.get(inputArray[index])?.invalid
+    );
   }
 
   mostrarError(inputName: string): string | null {
@@ -114,6 +134,17 @@ export class FormularioAnidadoComponent implements OnInit {
   //EXTRAER EL ERROR si existe
 
   //==========ERRORES===========//
+
+  //============AÑADIR===============//
+  onAddHobbie() {
+    //this.myForm.controls['hobbies'].add
+    const hobbieAdd = new FormControl('', Validators.required);
+    this.hobbieForm.push(hobbieAdd);
+  }
+  //=====================DELETE======================//
+  onDeleteHobbie(i: number) {
+    this.hobbieForm.removeAt(i);
+  }
 
   submitForm() {
     this.myForm.markAllAsTouched(); // los input se marque apra que salte errores si tiene

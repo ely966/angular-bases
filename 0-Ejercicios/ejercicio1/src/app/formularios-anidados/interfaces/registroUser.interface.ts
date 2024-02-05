@@ -3,5 +3,5 @@ export interface RegistroUser {
   password: string;
   passwordRepeat: string;
   email: string;
-  hobbie: string;
+  hobbies: string[];
 }

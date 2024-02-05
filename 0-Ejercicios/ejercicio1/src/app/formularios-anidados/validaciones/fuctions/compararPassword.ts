@@ -18,7 +18,7 @@ export function compararPassword(): ValidatorFn {
     }
     //Comparamos las contraseñas
     // if (password === passwordRepeat) return null; //Si las dos contraseñas coinciden no deberia aver problemas
-
+    //Que si no son iguales que
     if (value.password !== value.passwordRepeat) {
       console.log(value);
       console.log('pass no iguales');

@@ -74,19 +74,47 @@
     </div>
     <!--=====================================-->
     <!--HOBBIES-->
-    <div class="form-group my-2" *ngIf="hobbies.length > 0">
-      <label class="fw-bold">Selecciona Hobbie</label>
-      <select class="form-control form-control-sm" formControlName="hobbie">
-        <option value="">Selecciona un hobbie</option>
-        <option *ngFor="let hobbie of hobbies" value="{{ hobbie }}">
+    <div
+      class="form-group my-2"
+      *ngIf="hobbies.length > 0"
+      formArrayName="hobbies"
+    >
+      <div
+        class="my-2"
+        *ngFor="let control of hobbieForm.controls; let i = index"
+      >
+        <p><label class="fw-bold">Selecciona Hobbie</label></p>
+        <select class="form-control" [formControlName]="i">
+          <!-- *ngFor="let hob of myForm.controls['hobbies']; let id = index"-->
+          <option value="">Selecciona un hobbie</option>
+          <option *ngFor="let hobbie of hobbies" value="{{ hobbie }}">
+            {{ hobbie }}
+          </option>
+          <!-- <option *ngFor="let hobbie of hobbies" value="{{ hobbie }}">
           {{ hobbie }}
-        </option>
-      </select>
+        </option> -->
+        </select>
+        <!--Borrar-->
+        <button id="delete" (click)="onDeleteHobbie(i)" class="btn btn-danger">
+          Borrar
+        </button>
+      </div>
+
+      <!---Añadir-->
+      <button
+        type="button"
+        class="btn btn-outline-info my-3"
+        (click)="onAddHobbie()"
+      >
+        Añadir Hobbie
+      </button>
+
       <!--ERRORES Hobbie-->
       <small *ngIf="checkInputError('hobbie')" class="form-text text-danger">{{
         mostrarError("hobbie")
       }}</small>
     </div>
+
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
