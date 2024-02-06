@@ -5,6 +5,7 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
+import { RegistroUser } from '../interfaces/registroUser.interface';
 import { RecogidaDatosService } from '../services/recogida-datos.service';
 import { compararPassword } from '../validaciones/fuctions/compararPassword';
 
@@ -16,6 +17,14 @@ import { compararPassword } from '../validaciones/fuctions/compararPassword';
 export class FormularioAnidadoComponent implements OnInit {
   //https://blog.angular-university.io/angular-custom-validators/
   ///Campo recogido para verificar errores
+
+  pruebaFormulario: RegistroUser = {
+    name: 'Maria Pilar',
+    password: 'maria',
+    passwordRepeat: 'maria',
+    email: 'maria@gmail.com',
+    hobbies: ['Leer', 'Viajar', 'Hacer Deporte'],
+  };
   inputForm: string | null = '';
 
   //Letras [a-zA-Z ]*
@@ -144,6 +153,27 @@ export class FormularioAnidadoComponent implements OnInit {
   //=====================DELETE======================//
   onDeleteHobbie(i: number) {
     this.hobbieForm.removeAt(i);
+  }
+
+  //===================================================
+  //========Llenar el formulario de
+  rellenarForm() {
+    //setValue es mas estrictivo a la hora de actualiza. Exige que el modelo tenga la misma estructura. Salta error, sino hay un campo.
+    //patchValue actiualiza todos los datos, no tira error si no encuentra un campo, es menos estrictivo.
+    this.myForm.patchValue(this.pruebaFormulario);
+    this.rellenarArrayForm(this.pruebaFormulario.hobbies);
+    this.myForm.setValue;
+  }
+
+  //RELLENAR formmulario Array
+  rellenarArrayForm(hobbies: string[]) {
+    for (let i = 1; hobbies.length > i; i++) {
+      //this.myForm.get('hobbies').patchValue(hobbies[i]);
+
+      const hobbieAdd = new FormControl('', Validators.required);
+      hobbieAdd.setValue(hobbies[i]);
+      this.hobbieForm.push(hobbieAdd);
+    }
   }
 
   submitForm() {

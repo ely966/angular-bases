@@ -95,7 +95,11 @@
         </option> -->
         </select>
         <!--Borrar-->
-        <button id="delete" (click)="onDeleteHobbie(i)" class="btn btn-danger">
+        <button
+          id="delete + {{ i }}"
+          (click)="onDeleteHobbie(i)"
+          class="btn btn-danger"
+        >
           Borrar
         </button>
       </div>
@@ -118,7 +122,9 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
-
+<button type="button" (click)="rellenarForm()" class="btn btn-primary">
+  Prueba
+</button>
 <!--https://getbootstrap.com/docs/5.0/utilities/text/-->
 
 <hr />
