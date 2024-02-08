@@ -95,8 +95,8 @@ export class FormularioAnidados2Component implements OnInit {
       code: new FormControl(0, Validators.required),
     });
   }
-  //De serie mandara el objeto vacio y sino el que le mandemos
-  //Darle un valor por defecto. Serviria para añadir  una direccion
+  //De serie mandara el objeto vacío y sino el que le mandemos
+  //Darle un valor por defecto. Serviría para añadir  una dirección
   createAddressForm2(address: address = { address: '', city: '', code: 0 }) {
     return this.formBuilder.group<Address>({
       address: new FormControl(address.address, Validators.required),
@@ -105,7 +105,7 @@ export class FormularioAnidados2Component implements OnInit {
     });
   }
 
-  //==============CONTRUCTOR==============//
+  //==============CONSTRUCTOR==============//
   constructor(
     private formBuilder: FormBuilder,
     private recogidaDatos: RecogidaDatosService
