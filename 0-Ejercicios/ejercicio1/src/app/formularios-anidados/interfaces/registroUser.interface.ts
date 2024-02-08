@@ -4,4 +4,11 @@ export interface RegistroUser {
   passwordRepeat: string;
   email: string;
   hobbies: string[];
+  addressAll?: address[];
+}
+
+export interface address {
+  address: string;
+  city: string;
+  code: number;
 }

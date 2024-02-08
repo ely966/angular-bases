@@ -1,4 +1,4 @@
-<p>formulario-anidado works!</p>
+<p>formulario-anidado2 works!</p>
 <div class="d-flex justify-content-center align-items-center">
   <form [formGroup]="myForm" (ngSubmit)="submitForm()">
     <!--NAME y Pasword-->
@@ -118,7 +118,81 @@
         mostrarError("hobbie")
       }}</small>
     </div>
+    <!----------------------------------------------------------------------->
+    <!--===============================================-->
+    <!------------Direccion-------------->
 
+    <hr />
+    <!---Todo el apartado de direccion-->
+
+    <div class="form-group my-2" formArrayName="addressAll">
+      <!--Englobo todo con el nombre del formArray-->
+      <div *ngFor="let address of addresssForm.controls; let i = index">
+        <!--Recorre los controles-->
+        <div [formGroupName]="i">
+          <!--Englobar todo, pasamos el indice del array. formGroupName-->
+          <label class="fw-bold">Address</label>
+
+          <!---ADDRESS-->
+          <input
+            type="text"
+            class="form-control"
+            id="address+{{ i }}"
+            formControlName="address"
+            placeholder="Your address"
+          />
+          <!--ERRORES Direccion-->
+          <small
+            *ngIf="checkInputError('address')"
+            class="form-text text-danger"
+            >{{ mostrarError("address") }}</small
+          >
+          <!----CIUDAD---------->
+          <label class="fw-bold my-2">City</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="city"
+            id="city+{{ i }}"
+            placeholder="Your city"
+          />
+          <!--ERRORES Direccion-->
+          <!-- <small *ngIf="checkInputError('city')" class="form-text text-danger">{{
+      mostrarError("city")
+    }}</small> -->
+
+          <!-------------CODIGO POSTAL----------->
+          <label class="fw-bold my-2">Postal Code</label>
+          <input
+            type="number"
+            class="form-control"
+            id="code+{{ i }}"
+            formControlName="code"
+            placeholder="Your Postal code"
+          />
+          <!--ERRORES Direccion-->
+          <small
+            *ngIf="checkInputError('code')"
+            class="form-text text-danger"
+            >{{ mostrarError("code") }}</small
+          >
+          <!---BORRAR DIRECCION-->
+          <button
+            type="button"
+            (click)="onDeleteAddress(i)"
+            class="btn btn-danger"
+          >
+            Borrar direccion
+          </button>
+        </div>
+      </div>
+
+      <button type="button" (click)="onAddAddress()" class="btn btn-info mx-2">
+        Direccion
+      </button>
+    </div>
+    <hr />
+    <!----------------------------------------------------------------------->
     <button type="submit" class="btn btn-primary">Submit</button
     ><button
       type="reset"

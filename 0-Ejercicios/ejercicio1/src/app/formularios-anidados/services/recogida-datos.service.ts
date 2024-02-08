@@ -7,7 +7,7 @@ import { Observable, of } from 'rxjs';
 export class RecogidaDatosService {
   private hobbies: string[] = [
     'Escuchar música',
-    'Hacer deporte',
+    'Hacer Deporte',
     'VideoJuegos',
     'Viajar',
     'Leer',
