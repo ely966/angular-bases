@@ -1,0 +1,49 @@
+<p>formulario works!</p>
+<h2>{{ tituloPag }}</h2>
+<hr />
+<div>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="formGroup">
+      <label>Id : </label>
+      <input type="number" formControlName="id" />
+      <!--Aqui error si hay-->
+      <div *ngIf="checkIfError('id')">
+        <p>{{ obtenerError("id") }}</p>
+      </div>
+      <!--Fin Aqui error si hay-->
+    </div>
+    <!--========-->
+    <div class="formGroup">
+      <label>User Id : </label>
+      <input type="number" formControlName="userId" />
+      <!--Aqui error si hay-->
+      <div *ngIf="checkIfError('userId')">
+        <p>{{ obtenerError("userId") }}</p>
+      </div>
+      <!--Fin Aqui error si hay-->
+    </div>
+    <div class="formGroup">
+      <label>title : </label>
+      <input type="text" formControlName="title" />
+      <!--Aqui error si hay-->
+      <div *ngIf="checkIfError('title')">
+        <p>{{ obtenerError("title") }}</p>
+      </div>
+      <!--Fin Aqui error si hay-->
+    </div>
+    <div class="formGroup">
+      <label>Completed</label>
+      <select name="selectCompleted" formControlName="completed">
+        <option value="">Elige una opción</option>
+        <option value="true">true</option>
+        <option value="false">false</option>
+      </select>
+      <!--Aqui error si hay-->
+      <div *ngIf="checkIfError('completed')">
+        <p>{{ obtenerError("completed") }}</p>
+      </div>
+      <!--Fin Aqui error si hay-->
+    </div>
+    <button type="submit">{{ tituloPag }}</button>
+  </form>
+</div>

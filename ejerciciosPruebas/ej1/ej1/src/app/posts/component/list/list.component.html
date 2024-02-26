@@ -1,0 +1,30 @@
+<p>list works!</p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">userId</th>
+      <th scope="col">id</th>
+      <th scope="col">title</th>
+      <th scope="col">Completed</th>
+      <th scope="col">Información</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Borrar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of posts">
+      <th scope="row"></th>
+      <td>{{ post.userId }}</td>
+      <td>{{ post.id }}</td>
+      <td>{{ post.title }}</td>
+      <td>{{ post.completed }}</td>
+      <!-- <td>informacion <a routerLink="['./details',{{ post.id }}]">Info</a></td>
+       -->
+      <td>informacion <a [routerLink]="['./', post.id]">Info</a></td>
+
+      <td>Editar <a [routerLink]="['./edit', post.id]">Editar</a></td>
+      <td>Borrar. <button (click)="deletePost(post.id)">Borrar</button></td>
+    </tr>
+  </tbody>
+</table>

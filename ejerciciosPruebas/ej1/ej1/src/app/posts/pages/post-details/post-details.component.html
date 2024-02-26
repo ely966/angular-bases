@@ -1,0 +1,17 @@
+<p>post-details works!</p>
+<section *ngIf="postMostrar">
+  <div class="card" style="width: 18rem">
+    <img class="card-img-top" src="..." alt="Card image cap" />
+    <div class="card-body">
+      <h5 class="card-title">{{ postMostrar.title }}</h5>
+      <p class="card-text">id: {{ postMostrar.id }}</p>
+      <p>useriD: {{ postMostrar.userId }}</p>
+      <p>Completado: {{ postMostrar.completed }}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+
+  <button routerLink="../">Atras</button>
+</section>
+
+<section *ngIf="!postMostrar">No hay post</section>

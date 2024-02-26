@@ -1,0 +1,29 @@
+<p>lista works!</p>
+<section id="postMostrar">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">userId</th>
+        <th scope="col">title</th>
+        <th scope="col">completed</th>
+        <th scope="col">Ver más</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Borrar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of listPost">
+        <td>#</td>
+        <th scope="row">{{ post.userId }}</th>
+        <td>{{ post.title }}</td>
+        <td>{{ post.completed }}</td>
+        <!-- <td><a [routerLink]="['./{{post.userId}}']">Ver mas</a></td> -->
+        <td><a [routerLink]="['./', post.id]">Ver más</a></td>
+
+        <td><a [routerLink]="['./edit', post.id]">Edit</a></td>
+        <td><button (click)="deletePost(post.id)">Borrar</button></td>
+      </tr>
+    </tbody>
+  </table>
+</section>

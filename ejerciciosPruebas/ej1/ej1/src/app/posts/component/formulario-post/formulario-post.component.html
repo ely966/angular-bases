@@ -1,0 +1,48 @@
+<p>formulario-post works!</p>
+<section>
+  <form [formGroup]="myForm" (ngSubmit)="ngSubmit()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">userId</label>
+        <input
+          type="number"
+          class="form-control"
+          id="userId"
+          formControlName="userId"
+          placeholder="UserId"
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          formControlName="title"
+          placeholder="title"
+        />
+      </div>
+      <!-- <div class="form-group col-md-6">
+        <label for="inputEmail4">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Email"
+        />
+      </div> -->
+      <div class="form-group col-md-4">
+        <label for="inputState">completed</label>
+        <select class="form-control" formControlName="completed">
+          <!-- <option selected>Choose...</option> -->
+          <option value="">-</option>
+          <option value="false">false</option>
+          <option value="true">true</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+
+  <button [routerLink]="['posts/']">Volver</button>
+</section>
