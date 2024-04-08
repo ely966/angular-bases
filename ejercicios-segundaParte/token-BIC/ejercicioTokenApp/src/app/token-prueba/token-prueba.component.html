@@ -1,0 +1,22 @@
+<!--https://es.stackoverflow.com/questions/604175/c%C3%B3mo-comunicar-dos-componentes-de-angular-mediante-signals-->
+<section class="form-bic">
+  <h2>Form bic</h2>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmitForm()">
+    <input type="text" placeholder="Enter your Bic" formControlName="bic" />
+
+    <button type="submit" class="button-submit">Send</button>
+    <p class="text-error" *ngIf="checkError('bic')">{{ showErrors("bic") }}</p>
+  </form>
+
+  <!--HBUKGB4B-->
+  <div *ngIf="dataReceiverBIC()?.data?.valid" class="showData">
+    <p>Bank_code : {{ dataReceiverBIC()?.data?.bank_code }}</p>
+    <p>Branch_code: {{ dataReceiverBIC()?.data?.branch_code }}</p>
+    <p>Country_code: {{ dataReceiverBIC()?.data?.country_code }}</p>
+    <p>Location_code: {{ dataReceiverBIC()?.data?.location_code }}</p>
+    <p>Valid: {{ dataReceiverBIC()?.data?.valid }}</p>
+  </div>
+</section>
+<!-- {{ this.resultBic | json }} -->
+
+<!-- {{ dataReceiverBIC()?.data?.valid }} -->

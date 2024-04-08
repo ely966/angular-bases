@@ -1,0 +1,279 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*======================================*/
+/*FONDOS y contorno generales*/
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(226, 217, 217);
+}
+.page {
+  height: 850px;
+  position: relative;
+  min-height: 100%;
+}
+/*FOOTER AND HEADER*/
+.header,
+footer {
+  width: 100%;
+  /* background-color: rgb(126, 126, 126);  
+   background-color: rgb(158, 198, 250);
+*/
+  background-color: rgb(98, 165, 252);
+  height: auto;
+  max-height: 80px;
+  height: 100%;
+  min-height: 50px;
+  /* min-height: 100px; */
+  margin: 0px;
+  padding: 0px;
+}
+
+.nav-footer,
+.navbar {
+  padding-top: 8px;
+}
+
+.navbar {
+}
+
+.list-header,
+.list-footer {
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 10px; */
+  justify-content: center;
+  gap: 2px;
+  /* margin: 0px; */
+  padding: 0px;
+}
+.apartado-li-header,
+.apartado-li-footer {
+  list-style: none;
+  text-decoration: none;
+  /* background-color: rgb(60, 91, 206); */
+
+  background-color: rgb(104, 218, 240);
+  border: 1px solid blue;
+  padding: 10px;
+}
+.link-header,
+.link-footer {
+  text-decoration: none;
+
+  font-size: 20px;
+
+  /* background-color: red; */
+}
+
+/*Al pasar el raton sobre enlaces*/
+/* .link-header:hover,
+.link-footer:hover  */
+
+.apartado-li-header:hover,
+.apartado-li-footer:hover {
+  background-color: rgb(0, 140, 255);
+  border: 1px solid blue;
+  padding: 10px;
+}
+.link-header:hover,
+.link-footer:hover {
+  color: azure;
+
+  /* background-color: red; */
+}
+
+/*=============================================*/
+
+/*Contenido de la aplicacion dentro del main*/
+.main-content {
+  /* padding-block: 50px; */
+  margin: 0px;
+  padding: 0px;
+  max-width: 800px;
+
+  width: 100%;
+  margin-inline: auto;
+
+  /* max-height: 580px; */
+  min-height: 700px;
+  height: 100%;
+  margin-block: 50px;
+}
+
+.footer {
+  /* position: absolute; */
+}
+/*=============================================*/
+/*=============================================*/
+/*=============================================*/
+/*Fondo que conssite en titulo y formulario*/
+.lugarFormulario {
+  margin-inline: auto;
+  text-align: center;
+  background-color: rgb(155, 234, 238);
+  border: 1px solid rgb(41, 66, 255);
+  border-radius: 20px;
+  padding: 10px;
+  /* max-height: 650px; */
+}
+
+/*=======================================*/
+/*Botones*/
+.grupo-final-boton {
+  display: flex;
+  flex-wrap: wrap;
+}
+button {
+  flex-grow: 1;
+}
+/*=======================================*/
+input,
+select {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.separacion-bordes-boton {
+  border: 1px solid white;
+  border-radius: 10px;
+  margin-inline: 5px;
+  padding: 8px;
+}
+
+.scroll-list {
+  height: 500px;
+  overflow: scroll;
+}
+
+/*=========================================*/
+/*FORMULARIO*/
+.formulario {
+  padding: 0px;
+  margin: 0px;
+  line-height: 30px;
+  gap: 0px 30px;
+  /* width: 500px; */
+  text-align: center;
+  height: auto;
+}
+
+.secciones-formulario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+.apartado-form {
+  margin-block: 10px;
+  padding-block: 10px;
+  flex-grow: 1;
+  flex-basis: calc(30% - 10px);
+}
+
+.apartado-hobbie {
+  justify-content: center;
+}
+.div-hobbie {
+  padding-top: 10px;
+  max-width: 400%;
+}
+
+/*================================================*/
+/*Botones*/
+/*BOTON HOBBIES*/
+.add-hobbies {
+  background-color: aquamarine;
+  max-height: 50px;
+}
+.add-hobbies:hover {
+  background-color: rgb(10, 123, 86);
+  cursor: pointer;
+}
+/*BOTON borrar*/
+.borrar {
+  background-color: red;
+}
+.borrar:hover {
+  background-color: rgb(92, 8, 8);
+  cursor: pointer;
+}
+
+/*Boton enviar*/
+.enviar {
+  background-color: rgb(8, 117, 250);
+}
+.enviar:hover {
+  background-color: rgb(7, 7, 66);
+  cursor: pointer;
+}
+
+.color-letra-boton {
+  color: white;
+}
+
+.grupo-final-boton {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/*cursor reset*/
+.reset {
+  background-color: orange;
+}
+.reset:hover {
+  background-color: rgb(140, 45, 10);
+  cursor: pointer;
+}
+
+/*Cursor prueba*/
+
+.prueba {
+  background-color: cadetblue;
+}
+
+.prueba:hover {
+  background-color: rgb(63, 108, 110);
+  cursor: pointer;
+}
+
+.apartado-hobbie {
+  flex-grow: 1;
+  flex-basis: 100%;
+}
+button {
+  flex-grow: 1;
+}
+
+h6 {
+  font-size: 18px;
+  padding: 0px;
+  margin: 0px;
+  margin: 5px;
+}
+/*===================================================*/
+/* agregar borde rojo a los input que estén en estado inválido */
+/* .ng-invalid :not(form) {
+  border: 1px solid red;
+} */
+/* You can add global styles to this file, and also import other style files */
+input {
+  border: 1px solid black;
+}
+input.ng-invalid.ng-touched {
+  border: 1px solid #ff0000;
+}
+input.ng-valid.ng-touched {
+  border: 1px solid green;
+}
+
+select.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+select.ng-valid.ng-touched {
+  border: 1px solid green;
+}

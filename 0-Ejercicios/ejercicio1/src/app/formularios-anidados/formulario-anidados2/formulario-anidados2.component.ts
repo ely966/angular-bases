@@ -45,7 +45,7 @@ export class FormularioAnidados2Component implements OnInit {
   inputForm: string | null = '';
   botonPrueba: boolean = false;
   //Letras [a-zA-Z ]*
-  ///^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*$/con tildes
+  ///^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*$/con tildes regex patterValidator https://regex101.com/r/6tKFnj/1
   nameValidator2 = /^[A-Za-z\s]+$/;
 
   //Guardamos los Hobbies que lelgan desde servicios

@@ -1,0 +1,17 @@
+<!--Header. https://material.angular.io/components/list/api-->
+<!--https://github.com/fedeperin/potterapi?tab=readme-ov-file-->
+<header class="header">
+  <app-header></app-header>
+</header>
+<!--No Header. Comienza Sidebar y contenido principal-->
+<div class="general-content">
+  <!--Barra lateral-->
+  <aside class="sidebar">
+    <app-sidebar></app-sidebar>
+  </aside>
+
+  <!--Main-->
+  <main class="main">
+    <router-outlet></router-outlet>
+  </main>
+</div>

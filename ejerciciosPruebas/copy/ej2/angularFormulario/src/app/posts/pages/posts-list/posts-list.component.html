@@ -1,0 +1,7 @@
+<p>posts-list works!</p>
+<div class="content-list" *ngIf="postsRegocidos.length > 0; else avisoNoPost">
+  <!-- <post-lista [postsRegocidos] = "listPost"></post-lista> -->
+  <post-lista [listPost]="postsRegocidos"></post-lista>
+</div>
+
+<ng-template #avisoNoPost> <p>No hay post</p></ng-template>

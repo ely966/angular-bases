@@ -15,7 +15,7 @@ export class RecogidaDatosService {
 
   constructor() {}
 
-  //
+  //devuelve un observable, que e sun array transformado
   getHobbies(): Observable<string[]> {
     return of([...this.hobbies]);
   }

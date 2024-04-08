@@ -1,0 +1,9 @@
+
+Api harry-potter https://github.com/fedeperin/potterapi?tab=readme-ov-file
+
+Aplicacción Harry Potter
+1º Se utilizaran componentes de Angular Material
+2º Sidebard para navegar sobre los 4 endpoints principales
+3º Los datos se msotrarán en tablas con paginación (en front)
+4º Se utilizará multi idioma ES/EN (instalar ngx translate).
+5º Buscador en todas las tablas 

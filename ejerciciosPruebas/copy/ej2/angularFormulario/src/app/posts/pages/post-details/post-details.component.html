@@ -1,0 +1,13 @@
+<h2>Información del post</h2>
+<section>
+  <section *ngIf="id !== 0; else fallo">
+    <h3>{{ postMostrar.title }}</h3>
+    <p>Id: {{ postMostrar.id }}</p>
+    <p>Id User: {{ postMostrar.userId }}</p>
+    <p>Completed: {{ postMostrar.completed }}</p>
+  </section>
+  <a [routerLink]="['../']">Volver a la list</a>
+  <ng-template #fallo>
+    <p>Ha habido un error. No hay información de este post</p>
+  </ng-template>
+</section>

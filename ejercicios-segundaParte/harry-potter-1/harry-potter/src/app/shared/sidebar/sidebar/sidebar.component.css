@@ -1,0 +1,41 @@
+.navbar {
+  margin: 0px;
+  padding: 0px;
+  justify-content: center;
+  text-align: center;
+}
+/*Title of Nav*/
+.title-nav {
+  font-size: 24px;
+}
+
+/*Enlace de nav*/
+/* .a-nav {
+  background-color: rgb(156, 211, 253);
+  font-size: 18px;
+  text-decoration: none;
+
+  margin-block: 20px;
+  padding-block: 10px;
+  padding-inline: 50px;
+  border: 1px solid rgb(83, 144, 250);
+  border-radius: 10px;
+  width: 100%;
+} */
+
+/* UL del menu alteral
+.ul-nav {
+  margin: 0px;
+  padding: 0px;
+  overflow: auto;
+}
+Apartado de la lista
+.li-nav {
+  /* background-color: rgb(145, 251, 251); 
+  max-width: 65%;
+  margin: 0px auto;
+  padding: 0px;
+  list-style: none;
+  text-decoration: none;
+  margin-block: 20px;
+} */

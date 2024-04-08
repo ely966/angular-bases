@@ -1,0 +1,124 @@
+<div class="lugarFormulario">
+  <h2 class="titulo">Formulario tipo 2</h2>
+  <hr />
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="">
+    <div class="secciones-formulario">
+      <!--Nombre-->
+      <div class="apartado-form">
+        <h6>Nombre:</h6>
+        <input type="text" formControlName="name" />
+        <span *ngIf="checkError('name')">{{ comprobarCualError("name") }}</span>
+        <!--Segundo modo de comprobar errores-->
+        <!-- <app-check-errors  control="name"></app-check-errors> -->
+      </div>
+      <!--Eddad-->
+      <div class="apartado-form">
+        <h6>Edad</h6>
+        <input type="number" placeholder="Age" formControlName="age" />
+        <span *ngIf="checkError('age')">{{ comprobarCualError("age") }}</span>
+      </div>
+      <!--Correo-->
+      <div class="apartado-form">
+        <h6>Correo</h6>
+        <input type="text" placeholder="Email" formControlName="email" />
+        <span *ngIf="checkError('email')">{{
+          comprobarCualError("email")
+        }}</span>
+      </div>
+
+      <!--Usuario-->
+      <div class="apartado-form">
+        <h6>User:</h6>
+        <input type="text" formControlName="user" />
+        <span *ngIf="checkError('user')">{{ comprobarCualError("user") }}</span>
+      </div>
+      <!--Password-->
+      <div class="apartado-form">
+        <h6>Password:</h6>
+        <input type="password" formControlName="pass" />
+        <span *ngIf="checkError('pass')">{{ comprobarCualError("pass") }}</span>
+      </div>
+      <!--Repat Password-->
+      <div class="apartado-form">
+        <h6>Repeat Password:</h6>
+        <input type="password" formControlName="repeatPass" />
+        <span *ngIf="checkError('repeatPass')">{{
+          comprobarCualError("repeatPass")
+        }}</span>
+      </div>
+
+      <!--========================-->
+      <div
+        *ngIf="hobbies.length > 0"
+        formArrayName="hobbies"
+        class="apartadoForm apartado-hobbie"
+      >
+        <!--en global recoger todos los hobbies, y si hobbbies del servidor tiene hobbies muestre -->
+        <div
+          *ngFor="let control of hobbiesF.controls; let i = index"
+          class="div-hobbie"
+        >
+          <!--Recoge del get-->
+          <!--Que repita las veces que haya en el usuario, soino solo s emostrara una vez-->
+          <h6>Hobbies</h6>
+          <select id="hobbieSelect" [formControlName]="i">
+            <option selected value="">Selecciona una opcion</option>
+            <option *ngFor="let hobbie of hobbies" value="{{ hobbie }}">
+              {{ hobbie }}
+            </option>
+          </select>
+          <button
+            type="button"
+            class="borrar color-letra-boton separacion-bordes-boton"
+          >
+            Borrar
+          </button>
+        </div>
+      </div>
+      <button
+        type="button"
+        (click)="addHobbies()"
+        class="add-hobbies color-letra-boton separacion-bordes-boton"
+      >
+        Añadir hobbies
+      </button>
+      <!-- </div> -->
+      <hr />
+    </div>
+    <div class="grupo-final-boton">
+      <button
+        type="submit"
+        class="enviar color-letra-boton separacion-bordes-boton"
+      >
+        submit
+      </button>
+      <button
+        type="button"
+        class="reset color-letra-boton separacion-bordes-boton"
+      >
+        Resetear
+      </button>
+      <button
+        type="button"
+        class="prueba color-letra-boton separacion-bordes-boton"
+      >
+        Rellenar Prueba
+      </button>
+    </div>
+  </form>
+</div>
+<!-- valido:
+{{ this.myForm.valid }}
+{{ this.myForm.value | json }}
+-- Nombr: {{ this.myForm.value | json }}
+{{ this.myForm.controls["age"].errors | json }}
+--- -->
+<!-- <div>
+  <label>Hobbies</label>
+  <select id="hobbieSelect" formControlName="hobbiesF">
+    <option selected>Selecciona una opcion</option>
+    <option *ngFor="let hobbie of hobbies" value="{{ hobbie }}">
+      {{ hobbie }}
+    </option>
+  </select>
+</div> -->

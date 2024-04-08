@@ -1,0 +1,78 @@
+<div class="lugarFormulario">
+  <h2 class="titulo">Formulario tipo 2</h2>
+  <hr />
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="">
+    <div class="secciones-formulario">
+      <!--Nombre-->
+      <div class="apartado-form">
+        <h6>Nombre:</h6>
+        <input type="text" formControlName="name" />
+        <span *ngIf="checkError('name')">{{ comprobarCualError("name") }}</span>
+        <!--Segundo modo de comprobar errores-->
+        <!-- <app-check-errors  control="name"></app-check-errors> -->
+      </div>
+      <!--Eddad-->
+      <div class="apartado-form">
+        <h6>Edad</h6>
+        <input type="number" placeholder="Age" formControlName="age" />
+        <span *ngIf="checkError('age')">{{ comprobarCualError("age") }}</span>
+      </div>
+      <!--Correo-->
+      <div class="apartado-form">
+        <h6>Correo</h6>
+        <input type="text" placeholder="Email" formControlName="email" />
+        <span *ngIf="checkError('email')">{{
+          comprobarCualError("email")
+        }}</span>
+      </div>
+
+      <!--Usuario-->
+      <div class="apartado-form">
+        <h6>User:</h6>
+        <input type="text" formControlName="user" />
+        <span *ngIf="checkError('user')">{{ comprobarCualError("user") }}</span>
+      </div>
+      <!--Password-->
+      <div class="apartado-form">
+        <h6>Password:</h6>
+        <input type="password" formControlName="pass" />
+        <span *ngIf="checkError('pass')">{{ comprobarCualError("pass") }}</span>
+      </div>
+      <!--Repat Password-->
+      <div class="apartado-form">
+        <h6>Repeat Password:</h6>
+        <input type="password" formControlName="repeatPass" />
+        <span *ngIf="checkError('repeatPass')">{{
+          comprobarCualError("repeatPass")
+        }}</span>
+      </div>
+
+      <!--========================-->
+    </div>
+    <div class="grupo-final-boton">
+      <button
+        type="button"
+        class="enviar color-letra-boton separacion-bordes-boton"
+      >
+        submit
+      </button>
+      <button
+        type="button"
+        class="reset color-letra-boton separacion-bordes-boton"
+      >
+        Resetear
+      </button>
+      <button
+        type="submit"
+        class="prueba color-letra-boton separacion-bordes-boton"
+      >
+        Rellenar Prueba
+      </button>
+    </div>
+  </form>
+</div>
+
+valido:
+{{ this.myForm.valid }}
+-- Nombr: {{ this.myForm.value }}
+{{ this.myForm.controls["age"].errors | json }}
