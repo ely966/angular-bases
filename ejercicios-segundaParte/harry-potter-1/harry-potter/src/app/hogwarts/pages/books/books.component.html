@@ -1,1 +1,8 @@
-<p>books works!</p>
+@if(books.length){
+
+<app-table
+  [categoryColumn]="headersBooks"
+  [dataSource]="books"
+  [titlePag]="titleBooks"
+></app-table>
+}

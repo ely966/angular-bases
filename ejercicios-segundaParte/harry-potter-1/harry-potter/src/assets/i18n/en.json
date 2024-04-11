@@ -1,0 +1,33 @@
+{
+  "BOOKS": "Books",
+  "SPELLS": "Spells",
+  "number": "Number",
+  "founder": "Founder",
+  "colors": "Colors",
+  "animal": "Animal",
+  "house": "House",
+  "emoji": "Emoji",
+  "index": "Index",
+  "spell": "Spell",
+  "use": "Use",
+  "fullName": "Full Name",
+  "nickname": "Nickname",
+  "hogwartsHouse": "HogwartsHouse",
+  "interpretedBy": "InterpretedBy",
+  "children": "Children",
+  "image": "Image",
+  "birthdate": "Birthdate",
+  "title": "Title",
+  "releaseDate": "ReleaseDate",
+  "description": "Description",
+  "pages": "Pages",
+  "cover": "Cover",
+  "CHARACTERS": "Characters",
+  "HOUSES": "Houses",
+  "originalTitle": "Original title",
+  "SELEC_LANGUAGE": "Select an language",
+  "PARRAFO_1": "this is test text ",
+  "HOUSESS": {
+    "DOOR": "Door"
+  }
+}

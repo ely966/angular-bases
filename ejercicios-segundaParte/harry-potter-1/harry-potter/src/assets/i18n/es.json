@@ -1,0 +1,33 @@
+{
+  "BOOKS": "Libros",
+  "house": "casa",
+  "emoji": "Icono",
+  "SPELLS": "Hechizos",
+  "number": "Número",
+  "founder": "Fundador",
+  "colors": "Colores",
+  "animal": "Animal",
+  "index": "Index",
+  "spell": "Hechizo",
+  "use": "Uso",
+  "fullName": "Nombre completo",
+  "nickname": "Apodo",
+  "hogwartsHouse": "Casa Hogwarts",
+  "interpretedBy": "Interpretado por",
+  "children": "Hijos",
+  "image": "Imagen",
+  "birthdate": "Cumpleaños",
+  "title": "Titulo",
+  "releaseDate": "Fecha de estreno",
+  "description": "Descripción",
+  "pages": "Páginas",
+  "cover": "Cubierta",
+  "CHARACTERS": "Personajes",
+  "HOUSES": "Casas",
+  "originalTitle": "Titulo original",
+  "SELEC_LANGUAGE": "Selecciona un lenguage",
+  "PARRAFO_1": "Esto es un texto de prueba",
+  "HOUSESS": {
+    "DOOR": "Puerta"
+  }
+}

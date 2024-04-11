@@ -1,3 +1,18 @@
 <div class="content-header">
   <h1>App Harry Potter</h1>
+  <div>
+    <mat-form-field>
+      <mat-label>{{ "SELEC_LANGUAGE" | translate }}</mat-label>
+      <mat-select [(value)]="selectedLanguage">
+        <mat-option>None</mat-option>
+        <mat-option value="en" (click)="changeLanguage('en')"
+          >English</mat-option
+        >
+        <mat-option value="es" (click)="changeLanguage('es')"
+          >Español</mat-option
+        >
+        <mat-option value="option3">Option 3</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
 </div>

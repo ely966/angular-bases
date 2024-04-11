@@ -8,8 +8,12 @@ import { ApiHogwartsService } from '../../services/api-hogwarts.service';
   styleUrl: './characters.component.css',
 })
 export class CharactersComponent implements OnInit {
+  /*Title pag*/
+  titleCharacters: string = 'CHARACTERS';
+  /*Characters*/
   characters: Character[] = [];
-  /*Categoriaspara la cabecera de la tabla de personajes*/
+  charactersImagenAdd: Character[] = [];
+  /*Categorias para la cabecera de la tabla de personajes*/
   headersCharacters: string[] = [
     'fullName',
     'nickname',
@@ -20,13 +24,14 @@ export class CharactersComponent implements OnInit {
     'birthdate',
     'index',
   ];
-  constructor(private apiHogwartsService: ApiHogwartsService) {}
+  /*Cantidad total de poersonajes*/
+  characterLength: number = 0;
+
   ngOnInit(): void {
     this.getCharacters();
   }
   /*Inject*/
   private apiHogwartsService1 = inject(ApiHogwartsService);
-  a = this.apiHogwartsService;
 
   /*Obtener los characters*/
 
@@ -34,8 +39,19 @@ export class CharactersComponent implements OnInit {
     this.apiHogwartsService1.getCharacter().subscribe({
       next: (characterReceiver) => {
         this.characters = characterReceiver;
-        console.log(this.characters);
       },
+    });
+    // this.modifyImage(this.characters);
+
+    // this.characterLength = this.characters.length;
+  }
+
+  modifyImage(characterss: Character[]) {
+    characterss.forEach((character) => {
+      const characterImage = character.image;
+      character.image = "<img src='" + characterImage + "'>";
+      this.charactersImagenAdd.push(character);
+      console.log(this.charactersImagenAdd);
     });
   }
 }

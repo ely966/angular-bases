@@ -1,0 +1,11 @@
+table {
+  overflow: scroll;
+}
+
+.titleDiv {
+  text-align: center;
+}
+.titlePag {
+  margin-block: 10px;
+  font-size: 29px;
+}

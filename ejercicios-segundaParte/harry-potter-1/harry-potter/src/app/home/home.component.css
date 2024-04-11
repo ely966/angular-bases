@@ -16,16 +16,20 @@
 .sidebar {
   background-color: rgb(184, 227, 253);
   border: 1px solid rgb(69, 153, 225);
-  margin-right: 15px;
+  margin-right: 10px;
   padding: 5px;
   height: auto;
   max-width: 15%;
+  flex-grow: 1;
 }
 
 .main {
   background-color: rgb(184, 227, 253);
   border: 1px solid rgb(69, 153, 225);
-  width: 80%;
+  width: 90%;
   padding: 10px;
   height: auto;
+  overflow: scroll;
+  margin-bottom: 20px;
+  flex-grow: 1;
 }

@@ -39,3 +39,10 @@ Apartado de la lista
   text-decoration: none;
   margin-block: 20px;
 } */
+.a-nav {
+  text-decoration: none;
+}
+.a-nav:hover {
+  background-color: rgb(102, 177, 152);
+  color: white;
+}

@@ -1,1 +1,9 @@
-<p>spells works!</p>
+@if(spells.length){
+
+<app-table
+  [categoryColumn]="headersSpells"
+  [dataSource]="spells"
+  [titlePag]="titleSpells"
+  [resultsLength]="spellsLength"
+></app-table>
+}
