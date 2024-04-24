@@ -1,0 +1,17 @@
+.list-photo-right {
+  height: 400px;
+  margin-block: 10px;
+}
+
+/* img {
+  width: 130px;
+  height: 300px;
+  object-fit: initial;
+ 
+} */
+.image-pet-rigth {
+  width: 130px;
+  height: 300px;
+  object-fit: initial;
+  cursor: pointer;
+}

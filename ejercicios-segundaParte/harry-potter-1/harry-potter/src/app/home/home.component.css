@@ -19,14 +19,14 @@
   margin-right: 10px;
   padding: 5px;
   height: auto;
-  max-width: 15%;
+  max-width: 10%;
   flex-grow: 1;
 }
 
 .main {
   background-color: rgb(184, 227, 253);
   border: 1px solid rgb(69, 153, 225);
-  width: 90%;
+  width: 86%;
   padding: 10px;
   height: auto;
   overflow: scroll;

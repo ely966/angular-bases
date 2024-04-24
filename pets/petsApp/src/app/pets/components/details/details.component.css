@@ -1,0 +1,42 @@
+.card {
+  border: 1px solid rgb(104, 66, 171);
+  border-radius: 5%;
+  padding: 10px;
+}
+
+.card-title {
+  font-size: 30px;
+}
+
+.list-caracterist-pet {
+  border: 1px solid rgb(116, 236, 232);
+  border-radius: 15%;
+  margin-block: 40px;
+}
+
+.link-more-info {
+  text-decoration: none;
+  padding: 8px;
+  background-color: aquamarine;
+  overflow: hidder;
+  border-radius: 10px;
+}
+img {
+  border-radius: 9%;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.return {
+  background-color: rgb(222, 130, 99);
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-block: 10px;
+  font-size: 15px;
+}
+.return:hover {
+  background-color: rgb(95, 33, 33);
+  cursor: pointer;
+  color: white;
+}

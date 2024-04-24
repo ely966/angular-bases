@@ -1,5 +1,5 @@
-table {
-  overflow: scroll;
+.mat-table {
+  overflow-x: scroll;
 }
 
 .titleDiv {

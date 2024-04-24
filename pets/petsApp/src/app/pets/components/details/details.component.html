@@ -1,0 +1,47 @@
+<section>
+  <!--Si hay datos del perro o gato-->
+  <ng-container *ngIf="datasCat">
+    <!--GATO-->
+    <div *ngIf="typePet == 'cat'">
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title class="card-title"
+              >{{ datasCat.name }}
+            </mat-card-title>
+            <mat-card-subtitle>{{ datasCat.alt_names }}</mat-card-subtitle>
+            <img
+              mat-card-lg-image
+              src="https://cdn2.thecatapi.com/images/{{
+                datasCat.reference_image_id
+              }}.jpg"
+            />
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          {{ datasCat.description }}
+
+          <mat-list class="list-caracterist-pet">
+            <mat-list-item>Life span: {{ datasCat.life_span }}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>{{ datasCat.hypoallergenic }}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>Item 3</mat-list-item>
+          </mat-list>
+          <p>
+            <a href="{{ datasCat.wikipedia_url }}" class="link-more-info"
+              >More information</a
+            >
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <!--PERRO-->
+    <div *ngIf="typePet == 'dog'"></div>
+
+    <button [routerLink]="['']" class="return">Return</button>
+  </ng-container>
+
+  <!--Si no hay datos del perro o gato-->
+  <ng-container *ngIf="!datasCat">aa </ng-container>
+</section>

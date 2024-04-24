@@ -1,0 +1,12 @@
+.content-header {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: space-around;
+  background-color: rgb(153, 219, 255);
+  padding-block: 10px;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 50px;
+}

@@ -1,0 +1,33 @@
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 10px;
+  justify-content: center;
+  height: auto;
+  /* margin-inline: 20px; */
+  padding: 5px;
+}
+/*CONTENIDO CENTRAL*/
+
+.main {
+  width: 70%;
+  /* overflow-x: scroll; */
+  margin-block: 15px;
+  text-align: center;
+}
+/*BARRA LATERAL IZQUIERDA*/
+
+.sidebar {
+  padding: 0px;
+  margin: 0px;
+  width: 13%;
+  background-color: rgb(245, 157, 247);
+}
+/*barra lateral derecha*/
+.sidebar-right {
+  width: 13%;
+  background-color: rgb(153, 156, 255);
+  /* rgb(153, 219, 255); */
+  text-align: center;
+}

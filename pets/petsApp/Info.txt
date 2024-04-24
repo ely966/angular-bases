@@ -1,0 +1,5 @@
+Api: https://api.thecatapi.com/v1/breeds?limit=10&page=0
+https://documenter.getpostman.com/view/5578104/2s935hRnak
+
+https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=8FfZAkNzs
+https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t

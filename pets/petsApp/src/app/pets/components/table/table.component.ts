@@ -3,44 +3,39 @@ import {
   Component,
   Input,
   OnChanges,
-  OnInit,
   SimpleChanges,
   ViewChild,
+  inject,
 } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrl: './table.component.css',
 })
-export class TableComponent implements OnInit, AfterViewInit, OnChanges {
+export class TableComponent implements OnChanges, AfterViewInit {
+  @Input() petReceiver: any[] = [];
   /*Headers/cabeceras table. Send from father*/
   @Input() categoryColumn: string[] = [''];
-
-  @Input() titlePag: string = 'Title'; /*Titulo pantalla. sobre la tabla*/
-  @Input() dataSource: any[] = []; /*datos que recibe apra mostrar en la table*/
-
+  @ViewChild('paginator', { static: false }) paginator!: MatPaginator;
+  imgCat: String = '';
+  //https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t
   dataSourceTable!: MatTableDataSource<any>;
 
-  @Input() resultsLength = this.dataSource.length;
-  isLoadingResults = true;
-  isRateLimitReached = false;
-  /*! es decirle a angular que esto lo inicializar luego*/
-  // translate: inject();
-  @ViewChild('paginator', { static: false }) paginator!: MatPaginator;
+  private router = inject(Router);
+
+  /*METODOS*/
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.dataSourceTable = new MatTableDataSource(this.dataSource);
+    this.dataSourceTable = new MatTableDataSource(this.petReceiver);
   }
+
   ngAfterViewInit() {
     // this.dataSourceTable= new MatTableDataSource(this.dataSource);
     this.dataSourceTable.paginator = this.paginator;
-    
-  }
-  ngOnInit(): void {
-    //this.dataSourceTable = new MatTableDataSource(this.dataSource);
   }
 
   //Filtro
@@ -49,5 +44,12 @@ export class TableComponent implements OnInit, AfterViewInit, OnChanges {
       .trim()
       .toLowerCase();
     //this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  /*Clikear una fila de la tabla te redirige a los detalles*/
+  detailsPet(cat: any) {
+    // console.log(cat);
+    // this.router.navigate([':' + cat]);
+    this.router.navigate(['cat/', cat]);
   }
 }
